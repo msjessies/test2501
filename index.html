@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI时代的职业挑战：保持竞争力的关键</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Preline UI Components -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/preline@2.0.2/dist/preline.min.css" />
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#c4fae8',
+                            100: '#aaf5dc',
+                            200: '#8deece',
+                            300: '#61e7bb',
+                            400: '#1ae2a0',
+                            500: '#10b981',
+                            600: '#088e62',
+                            700: '#047952',
+                            800: '#00583b',
+                            900: '#003020'
+                        },
+                        secondary: {
+                            50: '#eef9fe',
+                            100: '#d2eefb',
+                            200: '#b4e1f6',
+                            300: '#86cff1',
+                            400: '#3cb7ee',
+                            500: '#0ea5e9',
+                            600: '#0685be',
+                            700: '#0175a9',
+                            800: '#005d87',
+                            900: '#00415e'
+                        },
+                        neutral: {
+                            50: '#ffffff',
+                            100: '#ffffff',
+                            200: '#ffffff',
+                            300: '#ffffff',
+                            400: '#ffffff',
+                            500: '#e5e7eb',
+                            600: '#c6ccd7',
+                            700: '#b4bdd0',
+                            800: '#9aa9c6',
+                            900: '#8092b7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: '10px',
+                    },
+                    boxShadow: {
+                        sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+                        DEFAULT: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+                        md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                        lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                        xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        /* 自定义滚动条样式 */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #c6ccd7;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8092b7;
+        }
+        
+        .dark ::-webkit-scrollbar-thumb {
+            background: #4a5568;
+        }
+        
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #2d3748;
+        }
+        
+        /* 自定义动画效果 */
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* 内容块淡入动画延迟 */
+        .fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in:nth-child(3) { animation-delay: 0.3s; }
+        .fade-in:nth-child(4) { animation-delay: 0.4s; }
+        .fade-in:nth-child(5) { animation-delay: 0.5s; }
+        .fade-in:nth-child(6) { animation-delay: 0.6s; }
+        
+        /* 平滑滚动 */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* 卡片悬停效果 */
+        .hover-card {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .dark .hover-card:hover {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* 按钮悬停效果 */
+        .btn-hover {
+            transition: all 0.2s ease;
+        }
+        
+        .btn-hover:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="antialiased bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 leading-normal">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-robot text-primary-500"></i>
+                <h1 class="text-lg font-bold">AI时代的挑战</h1>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#intro" class="hover:text-primary-500 transition">引言</a>
+                    <a href="#challenges" class="hover:text-primary-500 transition">职业焦虑</a>
+                    <a href="#reality" class="hover:text-primary-500 transition">AI真实水平</a>
+                    <a href="#core-skills" class="hover:text-primary-500 transition">核心能力</a>
+                    <a href="#solutions" class="hover:text-primary-500 transition">应对之道</a>
+                </nav>
+                
+                <!-- 深色模式切换按钮 -->
+                <button id="theme-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    <i class="fas fa-sun text-yellow-500 dark:hidden"></i>
+                    <i class="fas fa-moon text-blue-400 hidden dark:block"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- 主内容区 -->
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        <!-- 顶部横幅 -->
+        <section class="mb-16 fade-in">
+            <div class="relative rounded-2xl overflow-hidden bg-gradient-to-r from-primary-600 to-secondary-700">
+                <div class="absolute inset-0 opacity-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                        <defs>
+                            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/>
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#grid)" />
+                    </svg>
+                </div>
+                
+                <div class="relative p-8 md:p-12 lg:p-16">
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">AI时代的职业挑战</h1>
+                    <h2 class="text-xl md:text-2xl text-white/90 mb-8">保持竞争力的关键</h2>
+                    <p class="text-white/80 text-lg max-w-2xl">在人工智能快速发展的时代，我们的工作和技能将如何变革？让我们一起探索如何应对挑战，保持核心竞争力。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 引言部分 -->
+        <section id="intro" class="mb-16 fade-in">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md hover-card">
+                <div class="flex items-start mb-6">
+                    <div class="w-12 h-12 flex-shrink-0 bg-primary-100 dark:bg-primary-900/50 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-lightbulb text-primary-500"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold">引言</h2>
+                </div>
+                
+                <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                    <p>今天我想与大家分享一个正在深刻改变我们工作方式的话题——人工智能。最近，在B站看到一个视频《AI机器人如何在2年内接管行政工作》，视频中的AI助手"小祝"展示了令人惊讶的能力：</p>
+                    
+                    <blockquote class="pl-4 border-l-4 border-primary-500 italic">
+                        小祝在单位第一天就被赋予撰写策划、报告和总结等任务，并逐渐接管了单位的行政工作。通过分析全国公开的行政业务数据，小祝生成高质量的摘要和纵向比较报告，帮助单位做出决策。随着小祝的评估建议被采纳或拒绝，单位甚至开始更新评价标准，员工和企业按照小祝的标准行事，最终小祝完全接管了行政工作。
+                    </blockquote>
+                    
+                    <p>当然，这个视频的内容有些夸张和科幻，目前的AI技术还远没有达到这个水平。但是这确实引发了我们的思考：<strong class="text-primary-600 dark:text-primary-400">我们普通人的工作是否很快就会被AI取代？</strong>今天，让我们一起探讨这个问题，并思考如何在AI时代保持我们的竞争力。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 职业焦虑部分 -->
+        <section id="challenges" class="mb-16 fade-in">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md hover-card">
+                <div class="flex items-start mb-6">
+                    <div class="w-12 h-12 flex-shrink-0 bg-secondary-100 dark:bg-secondary-900/50 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-exclamation-triangle text-secondary-500"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold">AI带来的职业焦虑</h2>
+                </div>
+                
+                <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                    <p>这种焦虑并非空穴来风。ChatGPT、DeepSeek、豆包等工具的出现，展示了AI在文字创作、视频图像生成等方面的惊人能力，今年以来agent的涌现更是让我们看到了AI的无限可能。特别是对于那些重复性、流程化的工作，AI的替代效应已经开始显现。</p>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg my-4">
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>我们的专业技能会被AI取代吗？</li>
+                            <li>我们的职业发展路径会因AI而改变吗？</li>
+                            <li>我们需要学习哪些新技能来适应这个变革？</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- AI的真实水平部分 -->
+        <section id="reality" class="mb-16 fade-in">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md hover-card">
+                <div class="flex items-start mb-6">
+                    <div class="w-12 h-12 flex-shrink-0 bg-primary-100 dark:bg-primary-900/50 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-balance-scale text-primary-500"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold">AI的真实水平：能与不能</h2>
+                </div>
+                
+                <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                    <p>然而，如果你真正深入使用过这些AI工具，你会发现一个有趣的现象，他可以给你生成一个行业报告，但仔细看什么也不能用；他可以帮你写一个小程序，但需要更多的时间debug。正如知名技术博主、前谷歌工程师木遥所言：</p>
+                    
+                    <blockquote class="pl-4 border-l-4 border-secondary-500 italic bg-secondary-50 dark:bg-secondary-900/30 p-4 rounded-r-lg">
+                        "自从干活有了AI，每天要在'我现在强得可怕'和'妈的什么垃圾'之间摆荡三百次。"
+                    </blockquote>
+                    
+                    <p>这句话生动描述了当前AI的真实状态——它有令人惊叹的能力，也有明显的局限性。AI有时能给出惊艳的成果，但也常常误解需求、生成错误信息或无法理解复杂语境。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- AI的实际作用部分 -->
+        <section id="actual-role" class="mb-16 fade-in">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md hover-card">
+                <div class="flex items-start mb-6">
+                    <div class="w-12 h-12 flex-shrink-0 bg-secondary-100 dark:bg-secondary-900/50 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-tools text-secondary-500"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold">目前AI的实际作用：赋能而非替代</h2>
+                </div>
+                
+                <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                    <p>那么，AI到底能为我们做什么？</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+                        <div class="bg-primary-50 dark:bg-primary-900/30 p-5 rounded-xl">
+                            <h3 class="text-xl font-semibold mb-3 text-primary-700 dark:text-primary-300">提升能力下限</h3>
+                            <p>AI让普通人也能产出专业水准的基础内容。即使不是设计师，也能创建简洁美观的设计；不是专业作家，也能生成结构清晰的文案；不懂编程，也能实现简单的自动化流程。</p>
+                        </div>
+                        
+                        <div class="bg-secondary-50 dark:bg-secondary-900/30 p-5 rounded-xl">
+                            <h3 class="text-xl font-semibold mb-3 text-secondary-700 dark:text-secondary-300">放大专业效率</h3>
+                            <p>对于专业人士，AI是强大的助手。它可以帮助润色文章、整理复杂数据、快速生成图表，处理那些耗时但不需要深度思考的工作。</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-center font-bold text-lg py-4">但核心是：<span class="text-primary-600 dark:text-primary-400">AI不能创造"1"，只能在"1"后面添加"0"</span>。原创的创意、关键的决策、深刻的洞察，这些仍然需要人类来完成。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 核心能力部分 -->
+        <section id="core-skills" class="mb-16 fade-in">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md hover-card">
+                <div class="flex items-start mb-6">
+                    <div class="w-12 h-12 flex-shrink-0 bg-primary-100 dark:bg-primary-900/50 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-brain text-primary-500"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold">AI难以替代的核心能力</h2>
+                </div>
+                
+                <div class="space-y-8 text-gray-700 dark:text-gray-300">
+                    <!-- 工程思维 -->
+                    <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
+                        <h3 class="text-xl font-semibold mb-3 flex items-center">
+                            <i class="fas fa-cogs text-secondary-500 mr-2"></i>
+                            工程思维与解决复杂问题的能力
+                        </h3>
+                        <p class="mb-4">工程思维是在不确定条件下通过系统方法解决实际问题的能力，AI缺乏这种在现实约束中灵活应对的能力。出现问题的时候，你能快速定位到事情最主要的矛盾，可能涉及很多能力的综合运用。</p>
+                        
+                        <div class="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
+                            <h4 class="font-medium text-primary-600 dark:text-primary-400 mb-2">实例：</h4>
+                            <p>当投资尽调中，面对潜在的风险时，需要迅速整合多部门数据、评估合规风险并制定应对方案。这种在压力下跨领域思考、权衡利弊并实时调整策略的能力，是AI难以企及的。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 创新意识 -->
+                    <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
+                        <h3 class="text-xl font-semibold mb-3 flex items-center">
+                            <i class="fas fa-lightbulb text-secondary-500 mr-2"></i>
+                            创新意识与想象力
+                        </h3>
+                        <p class="mb-4">你要有足够的想象力，敢于创新，真正的创新源于对市场趋势和人性需求的深刻洞察，而非简单的数据分析。AI可能能帮你找到突破口，但永远不可能在0之上帮你创造出1。</p>
+                        
+                        <div class="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
+                            <h4 class="font-medium text-primary-600 dark:text-primary-400 mb-2">实例：</h4>
+                            <p>人力资源部门在设计员工激励计划时，需要理解不同员工群体的内在动机、企业文化特点和行业发展趋势，创造性地设计既能提升员工满意度又能符合公司战略的方案。这种融合人文关怀与战略思维的创新，AI无法真正复制。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 沟通协作 -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 flex items-center">
+                            <i class="fas fa-comments text-secondary-500 mr-2"></i>
+                            沟通协作与跨部门协调能力
+                        </h3>
+                        <p class="mb-4">有效沟通不仅是传递信息，更是理解情绪、建立信任和达成共识的过程。与现实和真人世界的互动、理解和人性的洞察，AI可能永远无法超越。</p>
+                        
+                        <div class="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
+                            <h4 class="font-medium text-primary-600 dark:text-primary-400 mb-2">实例：</h4>
+                            <p>市场部门与外部合作伙伴谈判项目合作细节时，需要读懂对方未明确表达的顾虑，灵活调整谈判策略，在维护公司利益的同时建立长期合作关系。这种带有情感智慧和战略眼光的互动能力，是AI所不具备的。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 应对之道部分 -->
+        <section id="solutions" class="mb-16 fade-in">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md hover-card">
+                <div class="flex items-start mb-6">
+                    <div class="w-12 h-12 flex-shrink-0 bg-secondary-100 dark:bg-secondary-900/50 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-rocket text-secondary-500"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold">应对之道：培养主动性思维</h2>
+                </div>
+                
+                <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                    <p>面对AI的挑战，我们最强大的武器是什么？前特斯拉AI总监、OpenAI早期员工Andrej Karpathy给出了答案：</p>
+                    
+                    <div class="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/30 dark:to-secondary-900/30 p-6 rounded-xl space-y-4 my-6">
+                        <blockquote class="italic">
+                            "主动性比智力更重要。几十年来我对此的直觉判断都是错的，这可能是由于文化对智力的崇拜、各种媒体娱乐和对IQ的痴迷。主动性明显更强大，也明显更稀缺。你在招聘时看重主动性吗？我们的教育培养主动性吗？你是否在行动上展现了10倍的主动性？"
+                        </blockquote>
+                        
+                        <blockquote class="italic">
+                            "主动性作为一种人格特质，指的是个体主动采取行动、做决定，并控制自己行为和环境的能力。这是关于主动而非被动——具有高主动性的人不会让生活主宰自己；而是塑造自己的生活。"
+                        </blockquote>
+                        
+                        <blockquote class="italic">
+                            "高主动性的人即使面对障碍，也会设定目标并自信地追求它们。他们会说'我会想办法解决'，然后真的做到。相反，低主动性的人在自己的生活中更像是一个乘客，等待外部因素——如运气、他人或环境——来决定接下来会发生什么。"
+                        </blockquote>
+                    </div>
+                    
+                    <p>这正是AI时代我们最需要培养的能力：不是被动地等待变化，而是主动塑造自己的未来，以及尝试和突破的定力。只有那些愿意深入思考、持续学习和不断进化的人，才能在AI时代获得真正的竞争力。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 结语部分 -->
+        <section id="conclusion" class="mb-16 fade-in">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md hover-card">
+                <div class="flex items-start mb-6">
+                    <div class="w-12 h-12 flex-shrink-0 bg-primary-100 dark:bg-primary-900/50 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-flag-checkered text-primary-500"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold">结语</h2>
+                </div>
+                
+                <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                    <p>AI不是我们的敌人，而是我们的工具和伙伴。与其担忧被AI取代，不如思考如何借助AI的力量提升自己的能力，专注发展那些AI难以替代的核心技能。</p>
+                    
+                    <p>让我们保持好奇心和学习的热情，主动拥抱变化，在这个AI与人类共同发展的新时代，创造属于自己独特的价值。</p>
+                    
+                    <p class="font-medium">记住，未来属于那些能够与AI协同工作，并发挥人类独特优势的人。</p>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- 视频推荐部分 -->
+        <section class="mb-16 fade-in">
+            <div class="bg-gradient-to-r from-secondary-600/90 to-primary-600/90 rounded-2xl p-8 shadow-lg text-white">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="mb-6 md:mb-0 md:mr-8">
+                        <h3 class="text-2xl font-bold mb-4">想了解更多？</h3>
+                        <p class="text-white/90 mb-4">观看这个视频了解更多关于AI如何影响行政工作的深度探讨。虽然视频中的场景有些夸张，但值得我们思考AI未来可能带来的变革。</p>
+                        <a href="https://www.bilibili.com/video/BV18bQ7YBEbx/?share_source=copy_web&vd_source=54bbf0ba2c3ee13f4ac20f608108a0db" target="_blank" class="inline-flex items-center bg-white text-primary-600 px-6 py-3 rounded-full font-medium btn-hover shadow-md">
+                            <i class="fab fa-bilibili mr-2"></i>
+                            观看视频
+                        </a>
+                    </div>
+                    
+                    <div class="bg-white p-2 rounded-lg shadow-lg w-full md:w-96 aspect-video flex items-center justify-center">
+                        <div class="w-full h-full bg-gray-200 rounded flex items-center justify-center text-gray-600">
+                            <i class="fas fa-play-circle text-4xl mr-2"></i>
+                            <span>AI机器人如何在2年内接管行政工作</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <!-- 订阅区域 -->
+        <section class="mb-16 fade-in">
+            <div class="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 shadow-md border border-gray-200 dark:border-gray-700">
+                <div class="text-center max-w-xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-4">获取更多AI职场发展资讯</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6">订阅我们的电子报，定期获取AI行业动态和职场发展建议</p>
+                    
+                    <form class="flex flex-col sm:flex-row gap-3">
+                        <input type="email" placeholder="输入您的邮箱地址" class="flex-grow px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                        <button type="button" class="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg font-medium btn-hover">
+                            订阅
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 作者信息区域 -->
+        <section class="mb-8 fade-in">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="w-24 h-24 bg-primary-100 dark:bg-primary-900/50 rounded-full flex items-center justify-center text-primary-500 text-3xl font-bold mb-4 md:mb-0 md:mr-6">
+                        JS
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">关于作者</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Jesss是一位关注AI与投资交叉领域的专业人士，致力于研究人工智能如何改变我们的工作方式，并帮助人们在数字化转型中保持竞争力。</p>
+                        
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 页脚 -->
+    <footer class="bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-robot text-primary-500"></i>
+                        <span class="font-bold">AI时代的职业挑战</span>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">© 2025 JS. 保留所有权利。</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#intro" class="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400">引言</a>
+                    <a href="#challenges" class="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400">职业焦虑</a>
+                    <a href="#reality" class="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400">AI真实水平</a>
+                    <a href="#core-skills" class="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400">核心能力</a>
+                    <a href="#solutions" class="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400">应对之道</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary-500 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Preline UI JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/preline@2.0.2/dist/preline.min.js"></script>
+    
+    <!-- 自定义JavaScript -->
+    <script>
+        // 深色模式切换功能
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        
+        // 检查系统颜色偏好
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        
+        // 切换深色/浅色模式
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+        
+        // 回到顶部按钮功能
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 添加导航栏滚动效果
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+        
+        // 添加淡入动画监听
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeIn 0.8s ease forwards';
+                        fadeObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            fadeElements.forEach(element => {
+                fadeObserver.observe(element);
+            });
+        });
+        
+        // 订阅表单简单验证
+        const subscribeForm = document.querySelector('form');
+        const emailInput = document.querySelector('input[type="email"]');
+        const subscribeButton = document.querySelector('form button');
+        
+        subscribeButton.addEventListener('click', () => {
+            const email = emailInput.value.trim();
+            
+            if (!email || !email.includes('@') || !email.includes('.')) {
+                emailInput.classList.add('ring-2', 'ring-red-500');
+                setTimeout(() => {
+                    emailInput.classList.remove('ring-2', 'ring-red-500');
+                }, 2000);
+                return;
+            }
+            
+            // 模拟成功订阅
+            emailInput.value = '';
+            alert('订阅成功！感谢您的关注。');
+        });
+    </script>
+</body>
+</html>
